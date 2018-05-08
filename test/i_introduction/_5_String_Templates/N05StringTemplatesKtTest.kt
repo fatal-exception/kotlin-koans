@@ -3,7 +3,6 @@ package i_introduction._5_String_Templates
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.util.regex.Pattern
 
 class N05StringTemplatesKtTest {
     @Test fun match() {
