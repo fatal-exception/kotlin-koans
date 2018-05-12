@@ -5,7 +5,8 @@ import java.util.*
 
 fun MyDate.nextDay() = addTimeIntervals(DAY, 1)
 
-fun MyDate.addTimeIntervals(timeInterval: TimeInterval, number: Int) = Calendar.getInstance().run {
+fun MyDate.addTimeIntervals(timeInterval: TimeInterval, number: Int) =
+  Calendar.getInstance().run {
     set(year, month, dayOfMonth)
     add(when (timeInterval) {
         TimeInterval.DAY -> Calendar.DAY_OF_MONTH
