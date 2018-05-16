@@ -12,11 +12,22 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int)
 
 operator fun MyDate.rangeTo(other: MyDate): DateRange = todoTask27()
 
+operator fun MyDate.plus(ti: TimeInterval): MyDate =
+  addTimeIntervals(ti, 1)
+
+operator fun MyDate.plus(rti: RepeatedTimeInterval): MyDate =
+  addTimeIntervals(rti.ti, rti.occurrences)
+
 enum class TimeInterval {
     DAY,
     WEEK,
     YEAR
 }
+
+class RepeatedTimeInterval(val ti: TimeInterval, val occurrences: Int)
+
+operator fun TimeInterval.times(i: Int): RepeatedTimeInterval =
+  RepeatedTimeInterval(this, i)
 
 class DateRange(val startInclusive: MyDate, val endInclusive: MyDate): Iterable<MyDate>{
   operator fun contains(d: MyDate):Boolean = startInclusive <= d && d <= endInclusive
