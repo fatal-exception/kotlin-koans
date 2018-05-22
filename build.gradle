@@ -12,6 +12,9 @@ buildscript {
 
 apply plugin: 'kotlin'
 
+apply plugin: 'application'
+mainClassName = 'v_builders.demo.HtmlDemoKt'
+
 sourceSets {
     main.java.srcDirs += 'src'
     test.java.srcDirs += 'test'
